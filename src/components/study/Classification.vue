@@ -9,37 +9,43 @@
 
     <!-- 卡片视图区域 -->
     <el-card>
-      <el-space :size="size" :spacer="spacer">
-        <div>
-          <el-button @click="getListByType(4)">{{ btn1 }}</el-button>
-          <el-button @click="getListByType(0)">{{ btn2 }}</el-button>
-          <el-button @click="getListByType(1)">{{ btn3 }}</el-button>
-          <el-button @click="getListByType(2)">{{ btn4 }}</el-button>
-          <el-button @click="getListByType(3)">{{ btn5 }}</el-button>
-        </div>
-      </el-space>
-
-      <!-- <el-row :gutter="100">
-        <el-col :span="4"
+      <el-row>
+        <el-col :span="3" class="first-btn"
           ><el-button @click="getListByType(4)">{{ btn1 }}</el-button></el-col
         >
-        <el-col :span="4"
+        <el-col :span="3" class="second-btn"
           ><el-button @click="getListByType(0)">{{ btn2 }}</el-button></el-col
         >
-        <el-col :span="4"
+        <el-col :span="3" class="third-btn"
           ><el-button @click="getListByType(1)">{{ btn3 }}</el-button></el-col
         >
-        <el-col :span="4"
+        <el-col :span="3" class="fourth-btn"
           ><el-button @click="getListByType(2)">{{ btn4 }}</el-button></el-col
         >
-        <el-col :span="4"
+        <el-col :span="3" class="fifth-btn"
           ><el-button @click="getListByType(3)">{{ btn5 }}</el-button></el-col
         >
-      </el-row> -->
+      </el-row>
+    </el-card>
 
+    <el-card>
+      <div
+        class="chart-class"
+        id="myLine"
+        :style="{ width: '600px', height: '300px' }"
+      ></div>
       <!-- 2.为 ECharts 准备一个具备大小（宽高）的 DOM -->
-      <div id="myPie" :style="{ width: '300px', height: '300px' }"></div>
-      <div id="myLine" :style="{ width: '300px', height: '300px' }"></div>
+      <div
+        class="chart-class"
+        id="myPie"
+        :style="{ width: '350px', height: '300px' }"
+      ></div>
+    </el-card>
+
+    <el-card>
+      <el-row>
+        <div class="text-class">类别一：该类学生有挂科风险</div>
+      </el-row>
     </el-card>
   </div>
 </template>
@@ -106,11 +112,11 @@ export default {
       if (res.code !== 200) {
         return this.$message.error('获取数据失败！')
       }
-      this.btn1 = ' 总学生数  ' + res.btn1 + ' '
-      this.btn2 = '类别一学生数 ' + res.btn2
-      this.btn3 = '类别二学生数 ' + res.btn3
-      this.btn4 = '类别三学生数 ' + res.btn4
-      this.btn5 = '类别四学生数 ' + res.btn5
+      this.btn1 = '总学生数  ' + res.btn1
+      this.btn2 = '类别一学生数  ' + res.btn2
+      this.btn3 = '类别二学生数  ' + res.btn3
+      this.btn4 = '类别三学生数  ' + res.btn4
+      this.btn5 = '类别四学生数  ' + res.btn5
     },
 
     async getListByType(type) {
@@ -127,13 +133,33 @@ export default {
   margin-bottom: 15px;
 }
 
-.el-row {
-  margin-bottom: 20px;
-  &:last-child {
-    margin-bottom: 0;
-  }
+.first-btn {
+  margin-left: 5%;
 }
-.el-col {
-  border-radius: 4px;
+
+.second-btn {
+  margin-left: 5%;
+}
+
+.third-btn {
+  margin-left: 5%;
+}
+
+.fourth-btn {
+  margin-left: 5%;
+}
+
+.fifth-btn {
+  margin-left: 5%;
+}
+
+.chart-class {
+  display: inline-block;
+}
+
+.text-class {
+  color: #2b4b6b;
+  margin-left: 20px;
+  margin-bottom: 5px;
 }
 </style>
