@@ -91,7 +91,7 @@
               <span>课堂统计</span>
             </template>
             <!-- 二级菜单 -->
-            <el-menu-item index="student" @click="saveNavState('student')">
+            <el-menu-item index="onClass" @click="saveNavState('onClass')">
               <template slot="title">
                 <i class="el-icon-menu"></i>
                 <span>课堂情况</span>
@@ -123,7 +123,7 @@
               <span>预习统计</span>
             </template>
             <!-- 二级菜单 -->
-            <el-menu-item index="student" @click="saveNavState('student')">
+            <el-menu-item index="beforeClass" @click="saveNavState('beforeClass')">
               <template slot="title">
                 <i class="el-icon-menu"></i>
                 <span>课件推送</span>

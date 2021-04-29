@@ -9,6 +9,8 @@ import Score from '../components/score/Score.vue'
 import Setting from '../components/score/Setting.vue'
 import Classification from '../components/study/Classification.vue'
 import ClassList from '../components/study/ClassList.vue'
+import OnClass from '../components/statistics/OnClass.vue'
+import BeforeClass from '../components/statistics/BeforeClass.vue'
 
 Vue.use(VueRouter)
 
@@ -35,7 +37,9 @@ const routes = [
       { path: '/score', name: 'score', component: Score },
       { path: '/setting', component: Setting },
       { path: '/classification', component: Classification },
-      { path: '/classList', component: ClassList }
+      { path: '/classList', component: ClassList },
+      { path: '/onClass', component: OnClass },
+      { path: '/beforeClass', component: BeforeClass }
     ]
   }
 ]
