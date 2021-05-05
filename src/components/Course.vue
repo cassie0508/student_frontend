@@ -37,7 +37,7 @@
               type="primary"
               icon="el-icon-edit"
               size="small"
-              @click="updateDialogVisible = true"
+              @click="updateCourseFirst(scope.row.name)"
             ></el-button>
             <!-- 删除按钮 -->
             <el-button
@@ -104,9 +104,10 @@
           <el-select v-model="updateForm.type" placeholder="请选择更新方式">
             <el-option label="替换" value="替换"></el-option>
             <el-option label="追加" value="追加"></el-option>
+            <el-option label="导入成绩" value="导入成绩"></el-option>
           </el-select>
         </el-form-item>
-        <el-form-item label="雨课堂数据" prop="">
+        <el-form-item label="文件" prop="">
           <el-upload
             ref="uploadFile"
             action="none"
@@ -124,7 +125,7 @@
       <template #footer>
         <span class="dialog-footer">
           <el-button @click="addDialogVisible = false">取 消</el-button>
-          <el-button type="primary" @click="updateCourse(scope.row.name)"
+          <el-button type="primary" @click="updateCourse()"
             >确 定</el-button
           >
         </span>
@@ -200,12 +201,16 @@ export default {
       this.$router.push('/home')
     },
     // 更新课程
-    updateCourse(name) {
+    updateCourseFirst(name) {
+        this.updateDialogVisible = true
+        window.sessionStorage.setItem('coursename', name)  
+    },
+    updateCourse() {
         this.$refs.updateFormRef.validate(async valid => {
         if (!valid) return
         let myformData = new FormData()
         myformData.append('file', this.file.raw)
-        myformData.append('course', name)
+        myformData.append('course', window.sessionStorage.getItem('coursename'))
         myformData.append('type', this.updateForm.type)
         const { data: res } = await this.$axios.post('file/update', myformData)
         if (res.code !== 200) return this.$message.error('更新课程失败！')

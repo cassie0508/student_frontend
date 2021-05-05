@@ -92,10 +92,10 @@ export default {
         series: [
           {
             data: [
-              res.attendance[0],
-              res.attendance[1],
-              res.attendance[2],
-              res.attendance[3],
+              res.data1[0],
+              res.data1[1],
+              res.data1[2],
+              res.data1[3],
             ],
             type: 'bar',
             itemStyle: {
@@ -124,7 +124,7 @@ export default {
         },
         series: [
           {
-            data: [res.point[0], res.point[1], res.point[2]],
+            data: [res.data2[0], res.data2[1], res.data2[2]],
             type: 'bar',
             itemStyle: {
               normal: {

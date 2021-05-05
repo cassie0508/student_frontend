@@ -173,6 +173,12 @@ export default {
       if(window.localStorage.getItem('announcement')) {
         this.queryInfo.setting.announcement = window.localStorage.getItem('announcement')
       }
+      console.log("in get setting: " + this.queryInfo.setting.point)
+      console.log("in get setting: " + this.queryInfo.setting.page)
+      console.log("in get setting: " + this.queryInfo.setting.attendance)
+      console.log("in get setting: " + this.queryInfo.setting.barrage)
+      console.log("in get setting: " + this.queryInfo.setting.submission)
+      console.log("in get setting: " + this.queryInfo.setting.announcement)
 
 
       // let param = JSON.parse(this.$route.query.param)
@@ -192,7 +198,7 @@ export default {
       // myformData.append('setting', this.setting)
       // myformData.append('pagenum', this.queryInfo.pagenum)
       // myformData.append('pagesize', this.queryInfo.pagesize)
-      console.log(this.queryInfo)
+      console.log(this.queryInfo.setting)
       const { data: res } = await this.$axios.get('score', {
         params: this.queryInfo,
       })

@@ -11,6 +11,7 @@ import Classification from '../components/study/Classification.vue'
 import ClassList from '../components/study/ClassList.vue'
 import OnClass from '../components/statistics/OnClass.vue'
 import BeforeClass from '../components/statistics/BeforeClass.vue'
+import Exam from '../components/statistics/Exam.vue'
 
 Vue.use(VueRouter)
 
@@ -39,7 +40,8 @@ const routes = [
       { path: '/classification', component: Classification },
       { path: '/classList', component: ClassList },
       { path: '/onClass', component: OnClass },
-      { path: '/beforeClass', component: BeforeClass }
+      { path: '/beforeClass', component: BeforeClass },
+      { path: '/exam', component: Exam }
     ]
   }
 ]

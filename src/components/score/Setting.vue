@@ -181,15 +181,25 @@ export default {
     },
 
     setWeight() {
-      if(this.setting.point + this.setting.page + this.setting.attendance + this.setting.barrage +this.setting.submission +  this.setting.announcement != 100)
+      let sum = parseInt(this.setting.point) + parseInt(this.setting.page) + parseInt(this.setting.attendance) + parseInt(this.setting.barrage) + parseInt(this.setting.submission) +  parseInt(this.setting.announcement)
+      console.log(sum)
+      if(sum != 100)
       return this.$message.error('权重和需为100')
 
-      window.localStorage.setItem('point','0.' + this.setting.point)
-      window.localStorage.setItem('page','0.' + this.setting.page)
-      window.localStorage.setItem('attendance','0.' + this.setting.attendance)
-      window.localStorage.setItem('barrage','0.' + this.setting.barrage)
-      window.localStorage.setItem('submission','0.' + this.setting.submission)
-      window.localStorage.setItem('announcement','0.' + this.setting.announcement)
+      window.localStorage.setItem('point',parseInt(this.setting.point)/100)
+      window.localStorage.setItem('page',parseInt(this.setting.page)/100)
+      window.localStorage.setItem('attendance',parseInt(this.setting.attendance)/100)
+      window.localStorage.setItem('barrage',parseInt(this.setting.barrage)/100)
+      window.localStorage.setItem('submission',parseInt(this.setting.submission)/100)
+      window.localStorage.setItem('announcement',parseInt(this.setting.announcement)/100)
+
+      console.log(window.localStorage.getItem('point'))
+      console.log(window.localStorage.getItem('page'))
+      console.log(window.localStorage.getItem('attendance'))
+      console.log(window.localStorage.getItem('barrage'))
+      console.log(window.localStorage.getItem('submission'))
+      console.log(window.localStorage.getItem('announcement'))
+
 
       // let arg = JSON.stringify({
       //   point: '0.' + this.setting.point,

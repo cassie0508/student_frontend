@@ -107,7 +107,7 @@
               <span>试卷统计</span>
             </template>
             <!-- 二级菜单 -->
-            <el-menu-item index="student" @click="saveNavState('student')">
+            <el-menu-item index="exam" @click="saveNavState('exam')">
               <template slot="title">
                 <i class="el-icon-menu"></i>
                 <span>试卷情况</span>
