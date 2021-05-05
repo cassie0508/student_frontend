@@ -9,9 +9,12 @@ import Score from '../components/score/Score.vue'
 import Setting from '../components/score/Setting.vue'
 import Classification from '../components/study/Classification.vue'
 import ClassList from '../components/study/ClassList.vue'
-import OnClass from '../components/statistics/OnClass.vue'
-import BeforeClass from '../components/statistics/BeforeClass.vue'
-import Exam from '../components/statistics/Exam.vue'
+import OnClass from '../components/onClass/OnClass.vue'
+import BeforeClass from '../components/beforeClass/BeforeClass.vue'
+import Exam from '../components/exam/Exam.vue'
+import OnClassList from '../components/onClass/OnClassList.vue'
+import BeforeClassList from '../components/beforeClass/BeforeClassList.vue'
+import ExamList from '../components/exam/ExamList.vue'
 
 Vue.use(VueRouter)
 
@@ -41,7 +44,10 @@ const routes = [
       { path: '/classList', component: ClassList },
       { path: '/onClass', component: OnClass },
       { path: '/beforeClass', component: BeforeClass },
-      { path: '/exam', component: Exam }
+      { path: '/exam', component: Exam },
+      { path: '/onClassList', component: OnClassList },
+      { path: '/beforeClassList', component: BeforeClassList },
+      { path: '/examList', component: ExamList }
     ]
   }
 ]
