@@ -90,7 +90,6 @@
         ref="multipleTable"
         tooltip-effect="light"
         size="mini"
-        :default-sort="{ prop: 'date', order: 'descending' }"
       >
         <el-table-column
           v-for="(key, index) in Object.keys(scoreList[0])"

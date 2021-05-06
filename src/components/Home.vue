@@ -97,6 +97,12 @@
                 <span>课堂情况</span>
               </template>
             </el-menu-item>
+            <el-menu-item index="onClassList" @click="saveNavState('onClassList')">
+              <template slot="title">
+                <i class="el-icon-menu"></i>
+                <span>学生列表</span>
+              </template>
+            </el-menu-item>
           </el-submenu>
           <el-submenu index="5">
             <!-- 一级菜单的模板区域 -->
@@ -113,6 +119,12 @@
                 <span>试卷情况</span>
               </template>
             </el-menu-item>
+            <el-menu-item index="examList" @click="saveNavState('examList')">
+              <template slot="title">
+                <i class="el-icon-menu"></i>
+                <span>学生列表</span>
+              </template>
+            </el-menu-item>
           </el-submenu>
           <el-submenu index="6">
             <!-- 一级菜单的模板区域 -->
@@ -127,6 +139,12 @@
               <template slot="title">
                 <i class="el-icon-menu"></i>
                 <span>课件推送</span>
+              </template>
+            </el-menu-item>
+            <el-menu-item index="beforeClassList" @click="saveNavState('beforeClassList')">
+              <template slot="title">
+                <i class="el-icon-menu"></i>
+                <span>学生列表</span>
               </template>
             </el-menu-item>
           </el-submenu>
